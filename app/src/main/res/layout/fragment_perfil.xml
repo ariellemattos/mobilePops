@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.fragments.PerfilFragment"
+    android:orientation="vertical"
+    android:paddingTop="40dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editar"
+        android:layout_gravity="right"
+        android:background="@drawable/editar"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/usuario"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/txt_login_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Admin"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/txt_nome_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Nome: Caio da Costa Carmo"
+        android:textSize="16sp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/txt_cpf_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="CPF: 480.260.038-02"
+        android:textSize="16sp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/txt_email_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Email: caio.costacarmo@gmail.com"
+        android:textSize="16sp"
+        android:layout_marginLeft="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"/>
+
+</LinearLayout>
