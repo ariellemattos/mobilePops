@@ -8,6 +8,7 @@
         android:label="Pop&apos;Soda Drink"
         android:roundIcon="@drawable/logo_psd"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.CadastroActivity" />
         <activity

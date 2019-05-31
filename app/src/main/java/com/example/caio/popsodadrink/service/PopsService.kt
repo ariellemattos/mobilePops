@@ -24,6 +24,9 @@ interface PopsService {
     @GET("/promo")
     fun getPromocoes(): Call<Promocao>
 
+    @GET("/estabelecimentos")
+    fun getEstabelecimentos(): Call<Estabelecimento>
+
     @GET("/user/{user_id}")
     fun getUserById(
            @Path("user_id") userId: Int
