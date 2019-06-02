@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.example.caio.popsodadrink.model.Brinde
 import com.example.caio.popsodadrink.model.Promocao
 import com.example.caio.popsodadrink.R
+import com.squareup.picasso.Picasso
 
 class PromocaoAdapter(context: Context?)
     : ArrayAdapter<Promocao>( context,  0,  ArrayList<Promocao>()) {
@@ -30,6 +31,7 @@ class PromocaoAdapter(context: Context?)
         val txtDescricaoPromocao: TextView = v!!.findViewById(R.id.promo_descricao)
         val btn: Button = v!!.findViewById(R.id.btn_participar)
 
+        Picasso.get().load("http://www.bebidaspops.com.br/cms/view/img/temp/" + promocao.imagem).into(imgPromocao)
         txtNomePromocao.text = promocao.titulo
         txtDescricaoPromocao.text = promocao.descricao
 

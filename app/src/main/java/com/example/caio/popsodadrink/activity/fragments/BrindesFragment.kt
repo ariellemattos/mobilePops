@@ -1,37 +1,35 @@
 package com.example.caio.popsodadrink.activity.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
-import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ListView
 import com.example.caio.popsodadrink.R
+import com.example.caio.popsodadrink.activity.PagamentoActivity
 import com.example.caio.popsodadrink.adapter.BrindeAdapter
 import com.example.caio.popsodadrink.model.Brinde
 import com.example.caio.popsodadrink.presenter.BrindePresenter
+import com.example.caio.popsodadrink.service.PopsService
 import com.example.caio.popsodadrink.service.ServiceFactory
 import com.example.caio.popsodadrink.view.BrindeView
-import kotlinx.android.synthetic.main.fragment_brindes.*
+import kotlin.math.log
 
 
-class BrindesFragment: Fragment(), BrindeView, AdapterView.OnItemClickListener{
-    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+class BrindesFragment: Fragment(), BrindeView{
 
-    }
-    //val brindeAdapter : BrindeAdapter = BrindeAdapter(requireActivity(), 0, ArrayList<Brinde>())
-
-    var brindeAdapter : BrindeAdapter? = null
+    private var brindeAdapter : BrindeAdapter? = null
    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-       var service = ServiceFactory().create()
+       var service: PopsService = ServiceFactory().create()
        val fragmentBrindes = inflater.inflate(R.layout.fragment_brindes, container, false)
 
        //
        brindeAdapter = BrindeAdapter(this.context)
-       val brindePresenter : BrindePresenter
+       val bridePresenter : BrindePresenter
 
 
        //entrando dentro do conteúdo da fragment e resgatando os ids dos componentes
@@ -40,8 +38,8 @@ class BrindesFragment: Fragment(), BrindeView, AdapterView.OnItemClickListener{
        lstView.adapter = brindeAdapter
 
        //invocando o presenter junto com o response da API...
-       brindePresenter = BrindePresenter(service, this)
-       brindePresenter.getBrindes()
+       bridePresenter = BrindePresenter(service, this)
+       bridePresenter.getBrindes()
 
        return fragmentBrindes
 
@@ -52,4 +50,5 @@ class BrindesFragment: Fragment(), BrindeView, AdapterView.OnItemClickListener{
         brindeAdapter?.clear()
         brindeAdapter?.addAll(brindes)
     }
+
 }

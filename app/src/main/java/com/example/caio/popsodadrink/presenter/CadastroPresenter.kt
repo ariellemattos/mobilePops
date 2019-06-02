@@ -19,8 +19,6 @@ class CadastroPresenter(internal var view: CadastroView, internal var service: P
 
             override fun onResponse(call: Call<ApiResult>?, response: Response<ApiResult>?) {
 
-                val result = response?.body()
-
                 view.showMessage("Sucesso", "Usuário cadastrado com sucesso!")
 
             }

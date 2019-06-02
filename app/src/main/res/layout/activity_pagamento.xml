@@ -127,6 +127,7 @@
         android:text="Finalizar compra"
         android:textStyle="bold"
         android:textColor="#fff"
+        android:id="@+id/btnBuy"
         android:background="@drawable/botao"
         android:layout_gravity="center"/>
 

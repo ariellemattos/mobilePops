@@ -10,6 +10,9 @@ interface PopsService {
     @POST("/user/add")
     fun cadastrarUsuario(@Body usuario: Usuario): Call<ApiResult>
 
+    @POST("/brinde/buy")
+    fun addBuy(@Body compra: Compra): Call<ApiResult>
+
     @FormUrlEncoded
     @POST("/user/login")
     fun loginUsuario(
@@ -20,6 +23,9 @@ interface PopsService {
 
     @GET("/brinde")
     fun getBrindes(): Call<Brinde>
+
+    @GET("/brinde/{brinde_id}")
+    fun getBrinde(@Path("brinde_id") brindeId: Int): Call<Brinde>
 
     @GET("/promo")
     fun getPromocoes(): Call<Promocao>

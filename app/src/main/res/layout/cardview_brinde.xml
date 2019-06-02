@@ -28,7 +28,6 @@
             android:layout_height="100dp"
             android:layout_marginRight="15dp"
             android:layout_gravity="center_vertical"
-            android:background="#e5e5e5"
         />
 
         <LinearLayout
@@ -69,6 +68,7 @@
                     android:layout_height="wrap_content"
                     android:text="Comprar"
                     android:textStyle="bold"
+                    android:id="@+id/btnCompra"
                     android:textColor="#fff"
                     android:layout_marginLeft="35dp"
                     android:background="@drawable/botao"/>

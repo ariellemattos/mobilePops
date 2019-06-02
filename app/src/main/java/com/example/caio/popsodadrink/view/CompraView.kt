@@ -1,6 +1,6 @@
 package com.example.caio.popsodadrink.view
 
-interface CadastroView {
+interface CompraView {
 
     fun showMessage(titulo: String, mensagem: String)
 
