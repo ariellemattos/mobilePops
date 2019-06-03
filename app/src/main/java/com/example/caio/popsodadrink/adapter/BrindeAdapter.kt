@@ -36,6 +36,10 @@ class BrindeAdapter(context: Context?)
 
         btnCompra.setOnClickListener {
             val intent = Intent(this.context, PagamentoActivity::class.java)
+
+            intent.putExtra("nome_brinde", brinde.nome)
+            intent.putExtra("valor_brinde", brinde.valorUnitario)
+
             context.startActivity(intent)
         }
 

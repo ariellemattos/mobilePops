@@ -1,10 +1,10 @@
 package com.example.caio.popsodadrink.activity
 
 import android.content.DialogInterface
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
-import com.example.caio.popsodadrink.R
+import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import com.example.caio.popsodadrink.model.Compra
 import com.example.caio.popsodadrink.model.Item
 import com.example.caio.popsodadrink.presenter.CompraPresenter
@@ -12,20 +12,27 @@ import com.example.caio.popsodadrink.service.ServiceFactory
 import com.example.caio.popsodadrink.view.CompraView
 import kotlinx.android.synthetic.main.activity_pagamento.*
 
+
 class PagamentoActivity : AppCompatActivity(), CompraView {
 
     var service = ServiceFactory().create()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pagamento)
+        setContentView(com.example.caio.popsodadrink.R.layout.activity_pagamento)
 
         var presenter = CompraPresenter(this, service)
 
+
+        var nomeBrinde = intent.getStringExtra("nome_brinde")
+        var valorBrinde = intent.getDoubleExtra("valor_brinde", 0.0)
+
+        valorBrinde *= 100
+
         var item = Item(
                 "1",
-                "Calça",
-                3000,
+                nomeBrinde,
+                valorBrinde.toInt(),
                 1,
                 true
         )
