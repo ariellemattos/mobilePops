@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import com.example.caio.popsodadrink.R
 import com.example.caio.popsodadrink.model.Compra
+import com.example.caio.popsodadrink.model.Item
 import com.example.caio.popsodadrink.presenter.CompraPresenter
 import com.example.caio.popsodadrink.service.ServiceFactory
 import com.example.caio.popsodadrink.view.CompraView
@@ -21,14 +22,22 @@ class PagamentoActivity : AppCompatActivity(), CompraView {
 
         var presenter = CompraPresenter(this, service)
 
+        var item = Item(
+                "1",
+                "Calça",
+                3000,
+                1,
+                true
+        )
+
         btnBuy.setOnClickListener {
 
             var compra = Compra(
-                    "Teste App",
-                    "12",
-                    "2022",
-                    "123",
-                    "5555666677778884",
+                    txt_titular.text.toString(),
+                    txt_mes.text.toString(),
+                    txt_ano.text.toString(),
+                    txt_cod.text.toString(),
+                    txt_numCartao.text.toString(),
                     "4",
                     "48026003802",
                     "caio.costacarmo@gmail.com",
@@ -38,7 +47,8 @@ class PagamentoActivity : AppCompatActivity(), CompraView {
                     "Rua Joaquim Alvarenga",
                     "Jandira",
                     "160",
-                    "06626070"
+                    "06626070",
+                    item
             )
 
             presenter.transacao(compra)

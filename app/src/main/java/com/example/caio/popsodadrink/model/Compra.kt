@@ -1,6 +1,9 @@
 package com.example.caio.popsodadrink.model
 
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import com.google.gson.annotations.SerializedName
+import org.json.JSONObject
 import java.util.*
 
 class Compra (
@@ -18,5 +21,6 @@ class Compra (
         @SerializedName("logradouro") var logradouro: String,
         @SerializedName("cidade") var cidade: String,
         @SerializedName("num") var num: String,
-        @SerializedName("cep") var cep: String
+        @SerializedName("cep") var cep: String,
+        @SerializedName("item") var item: Item
 )
