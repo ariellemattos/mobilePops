@@ -29,6 +29,8 @@ class PagamentoActivity : AppCompatActivity(), CompraView {
 
         valorBrinde *= 100
 
+        Log.w("teste", valorBrinde.toString())
+
         var item = Item(
                 "1",
                 nomeBrinde,

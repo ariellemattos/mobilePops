@@ -8,7 +8,7 @@ class ServiceFactory {
 
     fun create(): PopsService {
         val retrofit = Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:3100")
+                .baseUrl("http://192.168.1.30:3100")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 

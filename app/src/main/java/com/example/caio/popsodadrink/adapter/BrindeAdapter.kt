@@ -45,7 +45,7 @@ class BrindeAdapter(context: Context?)
 
         Picasso.get().load("http://www.bebidaspops.com.br/cms/view/img/temp/" + brinde.imagem).into(imgBrinde)
         txtNameBrinde.text = brinde.nome
-        txtPriceBrinde.text = brinde.valorUnitario.toString()
+        txtPriceBrinde.text = "R$ " + brinde.valorUnitario.toString()
 
         return v
     }
